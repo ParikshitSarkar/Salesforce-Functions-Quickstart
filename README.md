@@ -1,19 +1,59 @@
-# Salesforce DX Project: Next Steps
+## Prerequisites for Salesforce Functions
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+1. Docker desktop
+2. Developer sandbox
+3. VS Code
+4. Salesforce CLI  (SF + SFDX)
+5. Node.js , NPM 
 
-## How Do You Plan to Deploy Your Changes?
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Steps for building simple function 
 
-## Configure Your Salesforce DX Project
+1. Create a new project in VS Code
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+2. Authorize org as dev hub 
 
-## Read All About It
+3. Create a new scratch org for testing the function
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
-# salesforce-functions-intro
+4. Go to root of the project and create function with following cmd:
+	  sf generate function --function-name myfunction --language javascript
+
+5. New “functions” directory will by created inside project scaffold
+
+6. Add function logic within index.js 
+
+
+## Start docker 
+
+1. Open docker desktop
+2. Go to VS code 
+3. Go to your function folder 
+	  cd functions/functionname
+4. Start function in container 
+	  sf run function start container
+5. New docker image will get created for your function
+6. Run the image file in docker 
+
+
+## Create payload
+
+1. Create a new payload.json file under your function’s directory 
+	  {"key" : ""}
+2. Click on invoke button
+3. JSON data is returned in output 
+
+
+## Reference : 
+
+1. https://github.com/trailheadapps/functions-recipes
+2. https://developer.salesforce.com/docs/platform/functions/guide/NODE_README.html
+3. https://developer.salesforce.com/docs/platform/functions/guide/set-up.html
+4. https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_run_commands_unified.htm#cli_reference_run_function_start_container_unified
+5. https://www.salesforceben.com/get-started-with-salesforce-functions/
+6. https://developer.salesforce.com/docs/platform/functions/guide/create-function.html
+
+
+
+
+
+
